@@ -41,7 +41,7 @@ def create_coloring_page(input_path, output_path, args):
 
     # Normalizar e converter para 8 bits se necessário
     if edges.dtype != np.uint8:
-        edges = cv2.normalize(edges, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+        edges = cv2.normalize(edges, edges, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
 
     # Aplicar limiarização
     if args.adaptive_threshold:
